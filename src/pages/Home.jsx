@@ -1,26 +1,28 @@
-"use client"
-import CTASection from './../components/CTASection'
-import useStore from './../store/useStore'
+import CTASection from "../components/Home/CTASection"
+import useStore from "../store/useStore"
 import { useEffect } from "react"
-import Header from '../components/Header'
-import Hero from './../components/Hero'
-import Courses from './../components/Courses'
-import Footer from './../components/Footer'
+import Header from "../components/Header-Footer/Header"
+import Hero from "../components/Home/Hero"
+import Courses from "../components/Home/Courses"
+import Mentors from "../components/Home/Mentors"
+import Footer from "../components/Header-Footer/Footer"
+import Rewievs from "../components/Home/Rewievs"
 
-
-const Home = () => {
-  const { isDarkMode, initializeTheme } = useStore()
+const Home = ({baseUrl}) => {
+  const { initializeTheme } = useStore()
 
   useEffect(() => {
     initializeTheme()
   }, [initializeTheme])
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${isDarkMode ? "dark" : ""}`}>
+    <div className="min-h-screen transition-colors duration-300">
       <div className="bg-white dark:bg-slate-900 text-gray-900 dark:text-white">
         <Header />
         <Hero />
-        <Courses />
+        <Courses baseUrl={baseUrl}/>
+        <Mentors baseUrl={baseUrl}/>
+        <Rewievs/>
         <CTASection />
         <Footer />
       </div>

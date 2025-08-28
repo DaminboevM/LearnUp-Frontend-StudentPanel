@@ -1,5 +1,9 @@
 import { Search, Users, BookOpen, Star } from "lucide-react"
-import img from "../assets/imgs/home.png"
+import home from "../../assets/imgs/home.png"
+import Button from '@mui/material/Button'
+import SearchIcon from '@mui/icons-material/Search'
+
+
 
 const Hero = () => {
   return (
@@ -8,7 +12,7 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           <div className="flex-1 text-left space-y-8">
             <h1 className="text-5xl lg:text-7xl font-bold">
-              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#054ac6] via-[lime] to-[#51a1a1] bg-clip-text text-transparent">
                 Learn Without
               </span>
               <br />
@@ -29,9 +33,20 @@ const Hero = () => {
                   className="w-full pl-10 pr-4 py-3 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                 />
               </div>
-              <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-xl transition-all duration-300 font-semibold whitespace-nowrap">
+              <Button
+                variant="contained"
+                startIcon={<SearchIcon />}
+                sx={{
+                  paddingX: 4,
+                  paddingY: 1.5,
+                  borderRadius: 2,
+                  textTransform: 'none',
+                  fontWeight: 600,
+                  boxShadow: 3,
+                }}
+              >
                 Explore
-              </button>
+              </Button>
             </div>
 
             <div className="flex flex-wrap items-center gap-4 sm:gap-8 text-sm text-gray-600 dark:text-gray-400">
@@ -52,7 +67,7 @@ const Hero = () => {
 
           <div className="flex-1 lg:flex-none">
             <img
-              src={img}
+              src={home}
               alt="Learning platform illustration"
               className="w-full max-w-md lg:max-w-lg xl:max-w-xl h-auto object-contain mx-auto lg:mx-0"
             />
