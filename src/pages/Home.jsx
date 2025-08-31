@@ -22,7 +22,7 @@ const Home = ({baseUrl}) => {
         <Hero />
         <Courses baseUrl={baseUrl}/>
         <Mentors baseUrl={baseUrl}/>
-        <Rewievs/>
+        <Rewievs baseUrl={baseUrl}/>
         <CTASection />
         <Footer />
       </div>

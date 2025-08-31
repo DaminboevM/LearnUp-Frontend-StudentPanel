@@ -6,9 +6,9 @@ export default function ContactPage() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-12">
-          <p className="text-blue-600 dark:text-blue-400 text-lg font-medium mb-6 tracking-wide">Bog'lanish</p>
+          <p className="text-blue-600 dark:text-blue-400 text-lg font-medium mb-6 tracking-wide">Connection</p>
           <h1 className="text-slate-900 dark:text-white text-4xl md:text-5xl font-semibold text-balance leading-tight">
-            Savollaringiz bo'lsa murojaat qiling
+            Please contact us if you have any questions.
           </h1>
         </div>
 
@@ -21,8 +21,8 @@ export default function ContactPage() {
                 <Phone className="w-7 h-7 text-white" />
               </div>
               <div className="space-y-3">
-                <h3 className="text-slate-900 dark:text-white text-xl font-semibold">Telefon</h3>
-                <p className="text-slate-700 dark:text-slate-300 text-lg font-medium">+998(97) 866 50 50</p>
+                <h3 className="text-slate-900 dark:text-white text-xl font-semibold">Phone</h3>
+                <p className="text-slate-700 dark:text-slate-300 text-lg font-medium">+998(33) 524 29 81</p>
               </div>
             </div>
           </div>
@@ -34,8 +34,8 @@ export default function ContactPage() {
                 <Mail className="w-7 h-7 text-white" />
               </div>
               <div className="space-y-3">
-                <h3 className="text-slate-900 dark:text-white text-xl font-semibold">Elektron Pochta</h3>
-                <p className="text-slate-700 dark:text-slate-300 text-lg font-medium break-words">itliveguliston2023@gmail.com</p>
+                <h3 className="text-slate-900 dark:text-white text-xl font-semibold">Email</h3>
+                <p className="text-slate-700 dark:text-slate-300 text-lg font-medium break-words">m701rizo@gmail.com</p>
               </div>
             </div>
           </div>
@@ -47,9 +47,9 @@ export default function ContactPage() {
                 <MapPin className="w-7 h-7 text-white" />
               </div>
               <div className="space-y-3">
-                <h3 className="text-slate-900 dark:text-white text-xl font-semibold">Manzil</h3>
+                <h3 className="text-slate-900 dark:text-white text-xl font-semibold">Address</h3>
                 <p className="text-slate-700 dark:text-slate-300 text-lg font-medium leading-relaxed">
-                  Sirdaryo vil, Guliston sh, 1-mavze, IT LIVE ACADEMY
+                  Margilan city, Fergana region
                 </p>
               </div>
             </div>

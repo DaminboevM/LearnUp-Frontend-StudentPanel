@@ -8,7 +8,7 @@ import Galereya from '../components/About/Galereya'
 import Sertifikat from '../components/About/Sertifikat'
 
 
-function About() {
+function About({baseUrl}) {
 
   const { initializeTheme } = useStore()
 
@@ -25,7 +25,7 @@ function About() {
           <Info/>
           <Galereya/>
           <Sertifikat/>
-          <Mentors />
+          <Mentors baseUrl={baseUrl}/>
           <Footer />
         </div>
       </div>

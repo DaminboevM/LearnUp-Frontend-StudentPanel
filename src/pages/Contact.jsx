@@ -6,7 +6,7 @@ import ContactForm from '../components/Contact/Contactme'
 import Social from '../components/Contact/Social'
 
 
-function Contact() {
+function Contact({baseUrl}) {
 
   const { initializeTheme } = useStore()
 
@@ -21,7 +21,7 @@ function Contact() {
         <div className="bg-white dark:bg-slate-900 text-gray-900 dark:text-white">
           <Header />
           <Social/>
-          <ContactForm/>
+          <ContactForm baseUrl={baseUrl}/>
           <Footer />
         </div>
       </div>

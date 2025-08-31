@@ -17,16 +17,16 @@ const Courses = ({ baseUrl }) => {
             .catch(err => console.error(err))
     }, [])
 
-
+    
     useEffect(() => {
         if (!activeCategory?.id) return
 
         let url = `${baseUrl}/course/top`;
         if (activeCategory?.id) {
-            url += `/${activeCategory.id}`;
+            url += `?categoryId=${activeCategory.id}`;
         }
         axios.get(url)
-            .then(res => setCourses(res.data.data))
+            .then(res => (setCourses(res.data.data)))
             .catch(err => console.error("Kurslarni olishda xatolik:", err.name, err.message));
     }, [activeCategory, baseUrl]);
 
