@@ -78,7 +78,7 @@ const Courses = ({ baseUrl }) => {
 
                 {/* Desktop horizontal buttons */}
                 <div className="hidden md:flex justify-center gap-2 mb-16">
-                    {categories.map((el) => (
+                    {Array.isArray(categories) && categories.map((el) => (
                         <button
                             key={el.id}
                             onClick={() => setActiveCategory(el)}

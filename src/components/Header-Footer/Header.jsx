@@ -5,6 +5,9 @@ import { Link } from "react-router-dom"
 import logo from '../../assets/imgs/logo-1.png'
 
 const Header = () => {
+  const [showAuthApp, setShowAuthApp] = useState(false);
+
+  // ✅ HOOKLAR HAR DOIM RETURNDAN OLDIN BO'LISHI KERAK
   const { isDarkMode, toggleDarkMode, isMobileMenuOpen, toggleMobileMenu } = useStore()
   const [activeNav, setActiveNav] = useState("Home")
   const [currentPath, setCurrentPath] = useState("/")
@@ -12,6 +15,11 @@ const Header = () => {
   useEffect(() => {
     setCurrentPath(window.location.pathname)
   }, [])
+
+  // ❗ SHOW AUTHAPP SHARTINI RETURNGA YAQIN O'TKAZING
+  if (showAuthApp) {
+    return <AuthApp />;
+  }
 
   const handleNavClick = (navItem) => {
     setActiveNav(navItem)
@@ -63,11 +71,10 @@ const Header = () => {
                     key={link.to}
                     to={link.to}
                     onClick={() => handleNavClick(link.label)}
-                    className={`pb-1 transition cursor-pointer font-medium ${
-                      currentPath === link.to
-                        ? "border-b-2 border-blue-500 dark:border-blue-400 text-blue-600 dark:text-blue-400"
-                        : "text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 hover:border-b-2 hover:border-blue-300 dark:hover:border-blue-500"
-                    }`}
+                    className={`pb-1 transition cursor-pointer font-medium ${currentPath === link.to
+                      ? "border-b-2 border-blue-500 dark:border-blue-400 text-blue-600 dark:text-blue-400"
+                      : "text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 hover:border-b-2 hover:border-blue-300 dark:hover:border-blue-500"
+                      }`}
                   >
                     {link.label}
                   </Link>
@@ -86,12 +93,14 @@ const Header = () => {
             </button>
 
             <div className="hidden md:flex items-center space-x-3">
-              <button className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
-                Sign In
-              </button>
-              <button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg transition-all duration-200 transform hover:scale-105 font-medium shadow-lg hover:shadow-xl">
-                Get Started
-              </button>
+              {/* <button className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
+                  Sign In
+                </button> */}
+              <a href="/auth" target="_blank" rel="noopener noreferrer">
+                <button className="px-6 py-2 bg-[#206fca] text-white rounded-lg transition-all duration-200 transform hover:scale-105 font-medium shadow-lg hover:shadow-xl">
+                  Get Started
+                </button>
+              </a>
             </div>
 
             <button
@@ -114,23 +123,24 @@ const Header = () => {
                 key={link.to}
                 to={link.to}
                 onClick={() => handleNavClick(link.label)}
-                className={`pb-1 transition cursor-pointer font-medium ${
-                  currentPath === link.to
-                    ? "border-b-2 border-blue-500 dark:border-blue-400 text-blue-600 dark:text-blue-400"
-                    : "text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 hover:border-b-2 hover:border-blue-300 dark:hover:border-blue-500"
-                }`}
+                className={`pb-1 transition cursor-pointer font-medium ${currentPath === link.to
+                  ? "border-b-2 border-blue-500 dark:border-blue-400 text-blue-600 dark:text-blue-400"
+                  : "text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 hover:border-b-2 hover:border-blue-300 dark:hover:border-blue-500"
+                  }`}
               >
                 {link.label}
               </Link>
             ))}
 
             <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3 pt-3 border-t border-gray-200 dark:border-slate-700">
-              <button className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-center">
-                Sign In
-              </button>
-              <button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-lg transition-all duration-200 font-medium shadow-lg">
-                Get Started
-              </button>
+              {/* <button className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-center">
+                  Sign In
+                </button> */}
+              <a href="/auth" target="_blank" rel="noopener noreferrer">
+                <button className="px-6 py-2 bg-[#206fca] text-white rounded-lg transition-all duration-200 transform hover:scale-105 font-medium shadow-lg hover:shadow-xl">
+                  Get Started
+                </button>
+              </a>
             </div>
           </div>
         </div>

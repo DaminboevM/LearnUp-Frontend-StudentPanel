@@ -104,10 +104,10 @@ function Reviews({ baseUrl }) {
                   className="flex transition-transform duration-500 ease-in-out"
                   style={{ transform: `translateX(-${currentSlide * 100}%)` }}
                 >
-                  {Array.from({ length: totalSlides }).map((_, slideIndex) => (
+                  {Array.isArray(ratings) && Array.from({ length: totalSlides }).map((_, slideIndex) => (
                     <div key={slideIndex} className="w-full flex-shrink-0">
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {ratings
+                        {Array.isArray(ratings) && ratings
                           .slice(slideIndex * itemsPerSlide, slideIndex * itemsPerSlide + itemsPerSlide)
                           .map((review, index) => (
                             <div

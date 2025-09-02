@@ -17,7 +17,7 @@ function Mentors({baseUrl}) {
         setLoading(true)
         const response = await axios.get(`${baseUrl}/user/all/mentors`)
         
-        // Backend datani frontend formatiga o'tkazish
+        console.log(response)
         const formattedMentors = response.data.map(mentor => ({
           id: mentor.id,
           name: mentor.fullName,
